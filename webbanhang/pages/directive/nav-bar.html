@@ -1,0 +1,39 @@
+
+  <div id="undefined-sticky-wrapper" class="sticky-wrapper is-sticky" style="height: 55px;">
+      <nav class="main-nav js-stick dark stick-fixed" style="position: fixed; top: 0px;">
+        <div class="full-wrapper relative clearfix" style="padding-top: 0px;">
+          <!-- Logo ( * your text or image into link tag *) -->
+          <div class="nav-logo-wrap local-scroll">
+            <a class="navbar-brand" href=" ">Logo</a>
+          </div>
+          <div class="mobile-nav" style="height: 55px; line-height: 55px; width: 55px;">
+            <i class="fa fa-bars"></i>
+          </div>
+          <!-- Main Menu -->
+          <div class="inner-nav desktop-nav">
+            <ul class="clearlist scroll-nav local-scroll">
+              <li ng-repeat="cate in allCate">
+                <a href="pages/{{cate.cate_keyword}}" style="height: 55px; line-height: 55px;" class=""><strong>{{cate.cate_name}}</strong> </a>
+              </li>
+              
+              <li class="hidden-xs hidden-sm hidden-md">
+                <a style="height: 55px; line-height: 55px;">|</a>
+              </li>
+              <li class="dropdown">
+                  <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                      <span id="username" class = "glyphicon glyphicon-user"></span>
+                                  <b class="caret"></b>
+                              </a>
+                  <ul class="dropdown-menu mn-sub" style="    left: -50px;" >
+                    <li class="dropdown" style="    width: 100%;">
+                        <a href="profile"  style="width:auto">
+                          <span id="profile"  class = "glyphicon glyphicon-user"></span>Profile</a>
+                      </li>
+                      <li style="width:100%"   ng-click="logout()"><a href=" " style="width:100%"><span class = "glyphicon glyphicon-user"></span>Đăng Xuất</a></li>
+                  </ul>
+                </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </div>

@@ -1,0 +1,50 @@
+
+    <div class="content">
+        <div class="add-plugin" title="Thêm Nhóm" ng-click="cateAddbtn(0)">
+            <a href="" data-toggle="dropdown" aria-expanded="false">
+                <i class=" fa fa-2x fas fa-plus-circle " font> </i>
+            </a>
+        </div>
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="card">
+                <div class="card-header card-header-primary">
+                  <h4 class="card-title ">Quản Lý</h4>
+                  <p class="card-category"> Danh Sách Sản Phẩm </p>
+                </div>
+                <div class="card-body">
+                  <div class="table-responsive">
+                    <table class="table">
+                      <thead class=" text-primary">
+                        <th>                    ID                  </th>
+                        <th>           Keyword             </th>
+                        <th>                    Tên                  </th>
+                        <th>                 Ưu Tiên                 </th>
+                        <th>                Action            </th>
+                      </thead>
+                      <tbody>
+                        <tr ng-repeat="cate in allCate">
+                            <td>{{cate.id}}</td>
+                            <td class="truncate-text demission">{{cate.keyword}}</td>
+                            <td  style="width: 300px"><div class="truncate-text" style="width:  250px"> {{cate.name}}</div></td>
+                            <td class="truncate-text demission">{{cate.piority}}</td>
+                            <td>
+                                <div class="btn-group">
+                                  <a id="myBtn2" class="btn btn-primary myBtn" title="Sửa" ng-click="cateAddbtn(cate.id)"><i class="fas fa-wrench"></i></a>
+                                  <a  class="btn btn-danger" title="Xóa" ng-click="cateConfirmDelete(cate)" ><i class="fas fa-times-circle"></i></a>
+                                </div>
+                              </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+             
+            </div>
+          </div>
+        </div>
+      </div>
+      
+     

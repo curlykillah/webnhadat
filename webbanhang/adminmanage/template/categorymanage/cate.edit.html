@@ -1,0 +1,37 @@
+
+<div class="card">
+    <div class="header">
+        <h2>
+            VERTICAL LAYOUT
+        </h2>
+    </div>
+    <div class="body">
+        <form name="frmCate" id="frmCate" ng-submit="add(cate,id)">
+            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                <label for="keyword">Keyword</label>
+                <div class="form-group">
+                    <div class="form-line">
+                        <input type="text" id="keyword" required="required" ng-model="cate.keyword" class="form-control" placeholder="Enter your email address">
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                <label for="name">Tên</label>
+                <div class="form-group">
+                    <div class="form-line">
+                        <input type="text" id="name" required="required" ng-model="cate.name" class="form-control" placeholder="Enter your email address">
+                    </div>
+                </div>
+            </div>
+
+            <label for="piority">Ưu Tiên</label>
+            <div class="form-group">
+                <div class="form-line">
+                    <input type="text" id="piority" ng-model="cate.piority" required="required" class="form-control" placeholder="Enter your password">
+                </div>
+            </div>
+            <br>
+            <button type="submit" style="float: right;" ng-disabled="frmCate.$invalid" class="btn btn-primary m-t-15 waves-effect">Lưu</button>
+        </form>
+    </div>
+</div>

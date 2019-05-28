@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myAdmin">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script type="text/javascript" src="angular/angular.js"></script>
+    <script type="text/javascript" src="angular/angular-resource.js"></script>
+    <script type="text/javascript" src="angular/angular-route.js"></script>
+    <script type="text/javascript" src="bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
+    <script type="text/javascript" src="angular/ckeditor/ckeditor.js"></script>
+    <script type="text/javascript" src="angular/angular-ckeditor/angular-ckeditor.js"></script>
+    <script type="text/javascript" src="angular/angular-ui-select/dist/select.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.18/angular-sanitize.js"></script>
+
+    <link type="text/css" rel="stylesheet" href="angular/angular-ui-select/dist/select.min.css">
+      <!-- Bootstrap CSS -->
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <!-- bootstrap theme -->
+  <link href="css/bootstrap-theme.css" rel="stylesheet">
+  <!--external css-->
+  <!-- font icon -->
+  <link href="css/elegant-icons-style.css" rel="stylesheet" />
+  <!-- Custom styles -->
+  <link href="css/loginStyle/style.css" rel="stylesheet">
+  <script type="text/javascript" src="script.js"></script>
+  <script type="text/javascript" src="controller/admin/login/login.controller.js"></script>
+  <script type="text/javascript" src="service/service.js"></script>
+  <script type="text/javascript" src="service/user.service.js"></script>
+  <title>Login</title>
+</head>
+<body ng-controller="loginController" class="login-img3-body">
+    <div class="container">
+        <form class="login-form" >
+          <div class="login-wrap">
+            <p class="login-img"><i class="icon_lock_alt"></i></p>
+            <div class="input-group">
+              <span class="input-group-addon"><i class="icon_profile"></i></span>
+              <input type="text" class="form-control" ng-model="username" placeholder="Username" autofocus>
+            </div>
+            <div class="input-group">
+              <span class="input-group-addon"><i class="icon_key_alt"></i></span>
+              <input type="password" class="form-control" ng-model="password" placeholder="Password">
+            </div>
+            <label class="checkbox">
+                    <input type="checkbox" value="remember-me"> Remember me
+                    <span class="pull-right"> <a href="#"> Forgot Password?</a></span>
+                </label>
+            <button class="btn btn-primary btn-lg btn-block" ng-click="login()" type="submit">Login</button>
+            <!-- <button class="btn btn-info btn-lg btn-block" type="submit">Signup</button> -->
+          </div>
+        </form>
+        <!-- <div class="text-right">
+          <div class="credits">
+            
+              Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+            </div>
+        </div> -->
+      </div>
+</body>
+</html>

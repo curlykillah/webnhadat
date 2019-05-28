@@ -1,0 +1,56 @@
+<div class="modal-header">
+    <h3 class="modal-title" id="modal-title">Image!</h3>
+</div>
+
+<div class="modal-body" id="modal-body">
+        <div class="">
+                <ul class="nav nav-tabs">
+                  <li class="active"><a data-toggle="tab" href="/#select">Image</a></li>
+                  <li><a data-toggle="tab" href="/#upload">Upload</a></li>
+                </ul>
+              
+                <div class="tab-content">
+                  <div id="select" class="tab-pane fade in active">
+                    <div class="form-horizontal">
+                            <div class="form-group" >
+                                <div class="item  col-xs-2 col-lg-2"  style="padding: 2px;" ng-repeat="page in pages" >
+                                    <div class="thumbnail" id='{{page.id}}' style="border: none;">
+                                        <span ng-click="delete(page)" style="position: absolute;right: 10px;" class="close" title="Delete">&times;</span>
+                                        <img ng-click="check(page)" class="group list-group-image" style="height: 90px;" src="http://localhost/www/webbanhang/image/{{page.image}}" al t="Sản phẩm 7"
+                                            width="300" >
+                                    </div>
+                                
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                                <button class="btn btn-primary" type="button" ng-click="btnOk()">OK</button>
+                                <button class="btn btn-warning" type="button" ng-click="btnCancel()">Cancel</button>
+                            </div>
+                  </div>
+                  <div id="upload" class="tab-pane fade">
+                    <h3>Menu 1</h3>
+                    <div style="margin-bottom: 5px;">
+                            <center>
+                                <img style="width:30%" id="output"  class="img-responsive">
+                            </center>
+                        </div>
+            
+                        <form class="form-horizontal">
+                            <div class="form-group">
+                                <label for="inputEmail3" class="col-sm-3 control-label">Bìa</label>
+                                <div class="col-sm-9">
+                                    <input type="file" class="form-control" name="fileUpload" id="fileUpload" file-input="files">
+                                </div>
+                            </div>
+                        </form>
+                        <div class="modal-footer">
+                                <button class="btn btn-primary" type="button" ng-click="btnUpload()">OK</button>
+                                <button class="btn btn-warning" type="button" ng-click="btnCancel()">Cancel</button>
+                            </div>
+                  </div>
+                  
+                </div>
+              </div>
+    
+</div>

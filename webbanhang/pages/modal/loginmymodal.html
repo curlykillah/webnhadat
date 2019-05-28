@@ -1,0 +1,19 @@
+
+<div class="modal-body" id="modal-body" style="    padding: 15px 60px 15px 60px;">
+    <table class="table table-bordered">
+        <center>
+            <form class="form-signin" style="width: 50%">
+                <h1 class="h3 mb-3 font-weight-normal" style="    margin-bottom: 30px;">Login to your account</h1>
+                <input type="text" id="inputEmail" ng-model="username" class="form-control" placeholder="User Name" style="    margin-bottom: 10px;">
+                <input type="password" id="inputPassword" ng-model="password" class="form-control" placeholder="Password" style="    margin-bottom: 10px;">
+                <div class="checkbox mb-3">
+                    <label class="checkbox" >
+                        <input type="checkbox" value="remember-me"> Remember me
+                    </label>
+                </div>
+                <button class="btn btn-lg btn-login btn-block" ng-click="login()" type="submit">Sign in</button>
+                <span class="helper-text" ><i class="fa fa-lock"></i> <a href="forgotpass" ng-click="forgotmodal()" >Forgot password?</a></span>
+            </form>
+        </center>
+    </table>
+</div>

@@ -1,0 +1,58 @@
+<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <div class="pay-page" style="max-width: 800px;">
+                        <div class="card">
+                                <div class="card-header card-header-primary">
+                                        <h4 class="card-title">Nâng Cấp Tài Khoản</h4>
+                                        <p class="card-category">Bạn Đang Ở {{old}} Bạn Muốn nâng cấp lên:</p>
+                                        <select id="piority" class="form-control" id="sel2" ng-model="vip" required="required">
+                                                        <option ng-repeat="option in options"  value="{{option.location}}">{{option.name}}</option>
+                                                    </select>
+                                </div>
+                                <div class="card-body">
+                                                <form name="frmThanhToan" id='frmThanhToan' action="thanhtoan/check.php" method="post" target="_blank" onsubmit>
+                                                        <div id='high' >
+                                                                        <label for="fileUpload"><b> *Vui lòng nộp hình chứng chỉ abc để được đăng ký cấp độ này*</b></label>
+                                                                        <input type="file" class="form-control" name="fileUpload" id="fileUpload" file-input="files">
+                                                                        <center>
+                                                                                <img style="width:30% ;margin-top: 5px" type="file" file-input="filess" id="output" src="/image/{{image}}" class="img-responsive">
+                                                                            </center>
+                                                        </div>
+                                                        <div id='begin' >
+                                                                *Nếu bạn muốn nâng cấp ngay, ngại gì không bấm 'Nâng Cấp' và thanh toán* 
+                                                        </div>
+                                                        <div class=" col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                                                <div class="form-group bmd-form-group">
+                                                                        <label class="bmd-label-floating">Số Tiền Thanh Toán: </label><strong style="font-size:150%;color:red;">  {{price}}đ</strong> 
+                                                                </div>
+                                                        </div>
+                                                        <input type="email" class='hide' name="txt_email" size="28" required="required" ng-model='email' />
+                                                        <input type="text" class='hide' name="txh_name" size="28" placeholder="Họ tên" ng-model='name'  />
+                                                        <input type="text" class='hide' name="txt_phone" size="28" required="required"  ng-model='phone' />
+                                                        <input name="txt_gia" class='hide' id='txt_gia' type="text" size="28" ng-model="price" />
+                                                        <div id="emailAlertSuccess" class="alert alert-success hide" >
+                                                                        Xác Thực Thành Công, mời bạn nhấn Thanh Toán 1 lần nữa
+                                                        </div>
+                                                        <div id="emailAlertError" class="alert alert-danger hide" >
+                                                                        Xác Thực Thất Bại,{{error}}
+                                                        </div>
+                                                                <div class="clearfix">
+                                                                                <button type="button" class="cancelbtn">Hủy</button>
+                                                                                <button type="submit" ng-disabled="frmRegis.$invalid" ng-click="edit()" class="signupbtn">Nâng Cấp</button>
+                                                                    </div>
+                                                </form>
+                                        
+                                </div>
+                        </div>
+        
+        
+                </div>
+        
+        </div>
+    
+
+
+
+
+
+       
+

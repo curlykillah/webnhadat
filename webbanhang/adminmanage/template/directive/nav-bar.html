@@ -1,0 +1,40 @@
+
+  <section>
+    <aside id="leftsidebar" class="sidebar leftsidebar">
+        <div class="user-info">
+            <div class="image">
+                <img src="{{image}}" width="48" height="48" alt="User" />
+            </div>
+            <div class="info-container">
+                <div class="name" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{user.name}}</div>
+                <div class="btn-group user-helper-dropdown">
+                    <i class="material-icons" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">keyboard_arrow_down</i>
+                    <ul class="dropdown-menu pull-right">
+                        <li><a href="profile">Profile</a></li>
+                        <li role="separator" class="divider"></li>
+                        <li><a href="/www/webbanhang/adminmanage/login.html" target="_self">Sign Out</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- #User Info -->
+        <!-- Menu -->
+        <div class="menu">
+            <ul class="list" >
+                <li class="navv header">MAIN NAVIGATION</li>
+                <li id="Home" class="navv">
+                    <a href=" " class=" waves-effect waves-block">
+                        <i class="material-icons">home</i>
+                        <span>Home</span>
+                    </a>
+                </li>
+                <li class="navv" ng-repeat="admin in navAdmin" id="{{admin.name}}">
+                    <a class=" waves-effect waves-block" href="{{admin.location}}">
+                        <i class="material-icons">text_fields</i>
+                        <span>{{admin.name}}</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </aside>
+  </section>

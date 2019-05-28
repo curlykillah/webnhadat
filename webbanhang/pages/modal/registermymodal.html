@@ -1,0 +1,72 @@
+
+<div class="modal-body" id="modal-body">
+    <div>
+        <div class="tab-content">
+            <form name="frmRegis" id="frmRegis" class="form-horizontal ng-pristine ng-scope ng-invalid ng-invalid-required ng-valid-email">
+                <p>Vui Lòng Điền Đầy Đủ Thông Tin Bên Dưới Để Đăng Ký.</p>
+                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                        <label for="email">
+                                <b>Zizi (Ban vui long nhap email dung )</b>
+                            </label>
+                            <input type="email" placeholder="Nhập Email" name="email" ng-required="true" ng-model="user.email">
+                            <span style="color:red" ng-show="frmRegis.email.$dirty && frmRegis.email.$invalid">
+                                <span ng-show="frmRegis.email.$error.required">Email không được để trống</span>
+                                <span ng-show="frmRegis.email.$error.email">ban vui long nhap dung email</span>
+                            </span>
+                            <div id="emailAlert" class="alert alert-danger hide" >
+                                     Email đã được sử dụng
+                                </div>
+                            <br>
+                </div>
+                
+                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                        <label for="username">
+                                <b>Tên Đăng Nhập</b>
+                            </label>
+                            <input type="text" placeholder="Nhập tên đăng nhập" name="username" ng-model="user.name" ng-required="true" ng-pattern="/^[a-zA-Z0-9]{1,16}$/">
+                            <span style="color:red" ng-show="frmRegis.name.$dirty && frmRegis.username.$invalid">
+                                <span ng-show="frmRegis.username.$error.required">Tên đăng nhập không được để trống</span>
+                                <span ng-show="frmRegis.username.$error.pattern">Tên đăng nhập không được chứa ký tự đặc biệt và độ dài phải từ 1->16 ký tự</span>
+                            </span>
+                            <div id="userAlert" class="alert alert-danger hide" >
+                                     Tên Đăng Nhập đã tồn tại
+                                </div>
+                            <br>
+                </div>
+                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                        <label for="psw">
+                                <b>Password</b>
+                            </label>
+                            <input type="password" placeholder="Nhập Password" name="psw" ng-model="user.password" ng-required="true" ng-pattern="/^[a-zA-Z]\w{3,14}$/">
+                            <span ng-show="frmRegis.psw.$error.pattern" style="color:red">Not valid password.</span>
+                            <br>
+                    </div>
+                    <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                            <label for="pswrepeat">
+                                    <b>Kiểm tra lại Password</b>
+                                </label>
+                                <input type="password" placeholder="Nhập lại Password" match-password="user.password" name="pswrepeat" ng-model="user.pswrepeat" ng-required="true"
+                                    ng-pattern="/^[a-zA-Z]\w{3,14}$/">
+                                <div ng-if="frmRegis.pswrepeat.$dirty">
+                                    <p ng-show="frmRegis.pswrepeat.$error.required" class="help-block">Confirm password is required</p>
+                                    <p ng-show="frmRegis.pswrepeat.$error.matchPassword && !frmRegis.pswrepeat.$error.required" class="help-block">Confirm password didn't match</p>
+                                </div>
+                                <br>
+                        </div>
+                <label for="phone"><b>Điện Thoại</b></label>
+                          <input type="tel" placeholder="Nhập số điện thoại" name="phone" required ng-model="user.phone" ng-pattern="/^[0-9]{8,16}$/">
+                          <span style="color:red" ng-show="frmRegis.phone.$dirty && frmRegis.phone.$invalid">
+                                <span ng-show="frmRegis.phone.$error.required">Điện Thoại không được để trống</span>
+                                <span ng-show="frmRegis.phone.$error.pattern">Điện Thoại chỉ chứa số (8-16 số)</span>
+                            </span>
+            </form>
+            <div class="modal-footer">
+                <!-- <button type="submit" ng-disabled="frmRegis.$invalid" ng-click="add(user)" class="btn btn-primary">Lưu</button> -->
+                <div class="clearfix">
+                        <button type="button" class="cancelbtn" ng-click="close()">Hủy</button>
+                        <button type="submit" ng-disabled="frmRegis.$invalid" ng-click="add(user)" class="signupbtn">Đăng Ký</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

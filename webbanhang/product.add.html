@@ -1,0 +1,136 @@
+<div class="card">
+    <div class="header">
+        <h2>
+            Product Manage
+        </h2>
+    </div>
+    <div class="body">
+        <form name="frmCate" id="frmCate">
+            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                <div style="margin-bottom: 5px;">
+                    <center>
+                        <img style="width:30%" id="output" src="../image/{{product.file}}" class="img-responsive js-animating-object ">
+                        <button ng-click="modalSingleUpload()">Upload</button>
+                    </center>
+                </div>
+
+            </div>
+            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <div style="margin-bottom: 5px;" class="{{product.isslide}}">
+                        <center>
+                            <img style="width:30%" id="output" src="../image/{{product.slide}}" class="img-responsive js-animating-object ">
+                            <button ng-click="modalSlideUpload()">Upload</button>
+                        </center>
+                    </div>
+                    <label for="name">Slide??</label>
+                    <div class="form-group">
+                        <div class="form-line">
+                            <select class="form-control" id="sel2" ng-model="product.isslide" required="required">
+                                <option value="active">Có</option>
+                                <option value="hide">Không</option>
+                            </select>
+                        </div>
+                    </div>
+
+                </div>
+
+
+            </div>
+            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <label for="keyword">Tiêu Đề</label>
+                    <div class="form-group">
+                        <div class="form-line">
+                            <input type="text" id="keyword" required="required" ng-model="product.name" class="form-control" placeholder="Nhập Tiêu Đề">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <label for="name">Nhóm</label>
+                    <div class="form-group">
+                        <div class="form-line">
+                            <select class="form-control" id="sel2" ng-model="product.category" required="required">
+                                <option ng-repeat="cate in allCate " value="{{cate.keyword}}">{{cate.name}}</option>
+                            </select>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                                <label for="name">Tác giả</label>
+                                <div class="form-group">
+                                    <div class="form-line">
+                                        <input type="text" id="keyword" required="required" ng-model="product.author" class="form-control" placeholder="Nhập tác giả">
+                                    </div>
+                                </div>
+                            </div> -->
+
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <label for="name">Tags</label>
+                <div class="form-group">
+                    <div class="form-line">
+                        <ui-select multiple tagging tagging-label="" ng-model="product.tags" required="required" theme="bootstrap" sortable="true"
+                            ng-disabled="disabled" title="Choose a tag">
+                            <ui-select-match placeholder="Select tags...">{{$item}}</ui-select-match>
+                            <ui-select-choices repeat="tag in tags | filter:$select.search">
+                                {{tag}}
+                            </ui-select-choices>
+                        </ui-select>
+                    </div>
+                </div>
+            </div>
+            <div class="tabs" id="share-box" style="margin-top: 15px;">
+                <a class="tab first selected" id="tab_menu_1" href="">|| Thông tin |</a>
+                <a class="tab" id="tab_menu_2" href="">| Vị trí |</a>
+                <a class="tab" id="tab_menu_3" href=""> | Tiện ích |</a>
+                <a class="tab" id="tab_menu_4" href="">| Mặt bằng |</a>
+                <a class="tab" id="tab_menu_5" href="">  | Thiết Kế |</a>
+                <a class="tab" id="tab_menu_6" href="">| Nhà Mẫu ||</a>
+                <!-- <div class="tab first selected" id="tab_menu_1">
+                    Thông tin
+                </div> -->
+              
+            </div>
+            <div class="curvedContainer" id="curvedContainer">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 tabcontent" id="tab_content_1" style="display: block;">
+                    <label for="piority">Sơ Lược</label>
+                    <div id="content" name="content" ckeditor='options' ng-model="product.content" placeholder="Title" ng-required="true"></div>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 tabcontent" id="tab_content_2" style="display: none;">
+                    <label for="piority">Vị Trí</label>
+                    <button ng-click="modalUploadViTri()">Upload Image</button>
+                    <div id="vitri" name="vitri" ckeditor='options' ng-model="product.vitri" placeholder="Title" ng-required="true"></div>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 tabcontent" id="tab_content_3" style="display: none;">
+                    <label for="piority">Tiện Ích</label>
+                    <button ng-click="modalUploadTienIch()">Upload Image</button>
+                    <div id="tienich" name="tienich" ckeditor='options' ng-model="product.tienich" placeholder="Title"></div>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 tabcontent" id="tab_content_4" style="display: none;">
+                    <label for="piority">Mặt Bằng</label>
+                    <button ng-click="modalUploadMatBang()">Upload Image</button>
+                    <div id="matbang" name="matbang" ckeditor='options' ng-model="product.matbang" placeholder="Title"></div>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 tabcontent" id="tab_content_5" style="display: none;">
+                    <label for="piority">Thiết Kế</label>
+                    <button ng-click="modalUploadThietKe()">Upload Image</button>
+                    <div id="thietke" name="thietke" ckeditor='options' ng-model="product.thietke" placeholder="Title"></div>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 tabcontent" id="tab_content_6" style="display: none;">
+                    <label for="piority">Nhà Mẫu</label>
+                    <button ng-click="modalUploadNhaMau()">Upload Image</button>
+                    <div id="nhamau" name="nhamau" ckeditor='options' ng-model="product.nhamau" placeholder="Title"></div>
+            </div>
+            </div>
+        
+            <br>
+
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <button type="submit" style="float: right;" ng-click="add(product,id)" ng-disabled="frmCate.$invalid" class="btn btn-primary m-t-15 waves-effect">Lưu</button>
+            </div>
+        </form>
+    </div>
+</div>

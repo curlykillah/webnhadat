@@ -1,0 +1,83 @@
+.login-img3-body .login-form {
+    border: 1px solid #B0B6BE;
+    background: rgba(213,215,222,0.9);
+}
+.login-form {
+    max-width: 350px;
+    margin: 200px auto 0;
+    background: #d5d7de;
+}
+.login-wrap {
+    padding: 20px;
+}
+.login-img3-body .login-form p, .login-img2-body .login-form p {
+    color: #34aadc;
+}
+.login-form .login-img {
+    font-size: 50px;
+    font-weight: 300;
+}
+.login-form p {
+    text-align: center;
+    color: #b6b6b6;
+    font-size: 16px;
+    font-weight: 300;
+}
+.login-form .input-group {
+    padding-bottom: 15px;
+}
+.login-form .input-group-addon {
+    padding: 6px 12px;
+    font-size: 16px;
+    color: #8b9199;
+    font-weight: normal;
+    line-height: 1;
+    text-align: center;
+    background-color: #ffffff;
+    border: none;
+    border-radius: 0;
+}
+.login-form input[type="text"], .login-form input[type="password"] {
+    border: none;
+    box-shadow: none;
+    font-size: 16px;
+    border-radius: 0;
+}
+.login-form .form-control {
+    position: relative;
+    font-size: 16px;
+    height: auto;
+    padding: 10px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.login-form .checkbox {
+    font-weight: normal;
+    font-weight: 300;
+    font-family: 'Lato', sans-serif;
+}
+.login-form .checkbox {
+    margin-bottom: 14px;
+}
+.checkbox, .checkbox:hover, .checkbox:focus {
+    border: none;
+}
+.login-form .btn {
+    border-radius: 0;
+}
+.login-img3-body {
+    background: url(../../img/bg-1.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+body {
+    color: #797979;
+    background: #eeeeee;
+    font-family: 'Lato', sans-serif;
+    padding: 0px !important;
+    margin: 0px !important;
+    font-size: 14px !important;
+}

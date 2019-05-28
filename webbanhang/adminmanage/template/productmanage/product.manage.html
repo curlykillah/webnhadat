@@ -1,0 +1,59 @@
+
+  </div>
+  <form ng-submit="search(keyword)">
+    <input type="text" ng-model="keyword" placeholder="search">
+  </form>
+<div class="content">
+    <div class="add-plugin" title="Thêm Bài Viết" ng-click="productAddbtn(0)">
+        <a href="" data-toggle="dropdown" aria-expanded="false">
+            <i class=" fa fa-2x fas fa-plus-circle " font> </i>
+        </a>
+    </div>
+  <div class="container-fluid">
+    <div class="row">
+     
+      <div class="col-md-12">
+        <div class="card">
+          <div class="card-header card-header-primary">
+            <h4 class="card-title ">Quản Lý</h4>
+            <p class="card-category"> Danh Sách Sản Phẩm </p>
+          </div>
+          <div class="card-body">
+            <div class="table-responsive">
+              <table class="table">
+                <thead class=" text-primary">
+                  <th>                    ID                  </th>
+                  <th>           Tiêu Đề             </th>
+                  <th>                    Nhóm                  </th>
+                  <th>                    Hình ảnh                  </th>
+                  <th>                  Tác giả              </th>
+                  <th>                Action            </th>
+                </thead>
+                <tbody>
+                  <tr ng-repeat="page in pages">
+                      <td>{{page.id}}</td>
+                      <td  style="width: 300px"><div class="truncate-text" style="width:  250px"> {{page.name}}</div></td>
+                      <td>{{page.category}}</td>
+                      <td  style="width: 100px"><div class="truncate-text" style="width:  150px"> {{page.image}}</div></td>
+                      <td class="text-primary" style="width: 100px"><div class="truncate-text" style="width:  150px"> {{page.author}}</div></td>
+                      <td>
+                          <div class="btn-group">
+                            <a id="myBtn2" class="btn btn-primary myBtn" title="Sửa" ng-click="productAddbtn(page.id)"><i class="fas fa-wrench"></i></a>
+                            <a onclick="delete_confirm()" class="btn btn-danger" title="Xóa" ng-click="productConfirmDelete(page.id,page)" ><i class="fas fa-times-circle"></i></a>
+                          </div>
+                        </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <center >
+              <ul style="word-wrap: initial;" uib-pagination items-per-page={{itemsPerPage}} total-items="totalItems" ng-model="currentPage" max-size="maxSize" class="pagination-sm"
+                  boundary-links="true" num-pages="numPages"></ul>
+          </center>
+        </div>
+       
+      </div>
+    </div>
+  </div>
+</div>

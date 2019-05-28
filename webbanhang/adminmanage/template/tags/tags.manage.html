@@ -1,0 +1,40 @@
+
+<div class="content">
+    <div class="container-fluid">
+      <div class="row">
+       
+        <div class="col-md-12">
+          <div class="card">
+            <div class="card-header card-header-primary">
+              <h4 class="card-title ">Quản Lý</h4>
+              <p class="card-category"> Danh Sách Tags </p>
+            </div>
+            <div class="card-body">
+              <div class="table-responsive">
+                <table class="table">
+                  <thead class=" text-primary">
+                    <th>                    ID                  </th>
+                    <th>           Tags             </th>
+                    <th>                Action            </th>
+                  </thead>
+                  <tbody>
+                    <tr ng-repeat="tag in allTags">
+                        <td>{{tag.id}}</td>
+                        <td class="truncate-text demission">{{tag.name}}</td>
+                        <td>
+                            <div class="btn-group">
+                              <a  class="btn btn-danger" title="Xóa" ng-click="tagsConfirmDelete(tag)" ><i class="fas fa-times-circle"></i></a>
+                            </div>
+                          </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+         
+        </div>
+      </div>
+    </div>
+  </div>
+  

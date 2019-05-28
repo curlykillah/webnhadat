@@ -1,0 +1,22 @@
+<div class="modal-header">
+    <h3 class="modal-title" id="modal-title">Xuất file</h3>
+</div>
+<div class="modal-body" id="modal-body">
+        <a class="btn btn-primary btn-xs" type="button" href="#" onClick ="$('#tableID').tableExport({type:'excel',escape:'false'});">Xuất</a>
+        <table class="table table-bordered" id="tableID">
+                <thead style="    background-color: rgb(31, 243, 94);color: white;">			
+                        <tr>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Vip</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="user in allUser">
+                            <td>{{user.name}}</td>
+                            <td>{{user.email}}</td>
+                            <td>{{user.vip}}</td>
+                        </tr> 
+                    </tbody>
+        </table>
+</div>

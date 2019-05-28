@@ -1,0 +1,34 @@
+<div class="modal-header">
+    <h3 class="modal-title" id="modal-title">User!</h3>
+</div>
+<div class="modal-body" id="modal-body">
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Stt</th>
+                <th>Người dùng</th>
+                <th>authority</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody ng-repeat="user in allUser">
+            <tr>
+                <td>{{user.id}}</td>
+                <td>
+                    <div>{{user.name}}</div>
+                </td>
+                <td>
+                    <div>{{user.authority}}</div>
+                </td>
+
+                <td style="white-space: nowrap;">
+                    <button class="btn btn-default btn-xs btn-detail" id="btn-edit" ng-click="active(user.id,user)">Active</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div class="modal-footer">
+    <button class="btn btn-primary" type="button" ng-click="btnUpload()">OK</button>
+    <button class="btn btn-warning" type="button" ng-click="btnCancel()">Cancel</button>
+</div>

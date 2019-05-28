@@ -1,0 +1,39 @@
+<div ng-repeat="page in pageObject">
+    <!-- <div class="item  col-xs-3 col-lg-3">
+        <div class="thumbnail " >
+            <a title="{{page.name}}" href="pages/{{page.category}}/{{page.id}}">
+                <img class="group list-group-image panel" alt="{{page.name}}" style="height: 300px;border: none" src="image/{{page.image}}"
+                    width="300">
+            </a>
+            <div class="align-center intro-label">
+                    <span class="label label-danger bg-black">{{page.view}} <i class="fas fa-eye"></i></span>
+                    <span class="label label-danger bg-orange"> <a style="    color: #ffffff;" href="search/{{page.category}}/{{page.author}}">
+                    {{page.author}}
+                    </a></span>
+                </div>
+               
+            <div class="caption">
+                <center> <h4 class="group inner list-group-item-heading  align-center truncate-text title-cut" > {{page.name}}</h4></center>
+                <div class="row ">
+                    <div class="col-xs-12 col-md-12 align-center ">
+                        <a class="btn btn-mod btn-glass  btn-circle btn-medium" href="pages/{{page.category}}/{{page.id}}">Xem</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div> -->
+    <div class="slideanim col-sm-3 col-xs-3 text-center">
+        <div class="thumbnail"><a title="{{page.name}}" href="{{page.category}}/{{page.id}}">
+            <img alt="{{page.name}}" style="height: 200px;border: none" src="image/{{page.image}}"
+                width="200">
+        </a>
+            <p>
+                    <a title="{{page.name}}" href="{{page.category}}/{{page.id}}">
+                       <strong style="white-space: normal;" class="truncate-text title-cut">{{page.name}}</strong>
+                    </a>
+                
+            </p>
+        </div>
+    </div>
+</div>

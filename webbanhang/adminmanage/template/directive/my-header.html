@@ -1,0 +1,48 @@
+
+
+<nav class="navbar">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a href="" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false"></a>
+            <a href="" class="bars" ng-click="lockLeftsidebar()"></a>
+            <a id="test" class="navbar-brand" href=" ">ADMINISTRATOR - DESIGN</a>
+        </div>
+        <div class="collapse navbar-collapse" id="navbar-collapse">
+            <ul class="nav navbar-nav navbar-right">
+                <!-- <li><a href="" class="js-search" data-close="true"><i class="fas fa-search" style="font-size: 20px;"></i></a></li> -->
+                <li class="dropdown">
+                    <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button">
+                      <i class="far fa-bell" style="font-size: 20px;"></i>
+                        <span class="label-count">{{seen}}</span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li class="header">NOTIFICATIONS</li>
+                        <li class="body">
+                            <ul class="menu">
+                                <li ng-repeat="noti in allNoti" ng-click="touch(noti)" class="{{noti.class}}" style="    width: 400px;" >
+                                    <a href="" class=" waves-effect waves-block">
+                                        <div class="icon-circle bg-light-green">
+                                          <i class="far fa-edit"></i>
+                                        </div>
+                                        <div class="menu-info" >
+                                            <h4>{{noti.name}} {{noti.action}} {{noti.content}}({{noti.category}}) </h4>
+                                            <p>
+                                                <i class="material-icons">access_time</i> {{noti.date| date:"MM/dd/yyyy 'at' h:mma"}}
+                                            </p>
+                                        </div>
+                                    </a>
+                                </li>
+                             
+                            </ul>
+                        </li>
+                        <li class="footer">
+                            <a href="" ng-click="viewMore()">View More Notifications</a>
+                        </li>
+                        
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+  </nav>
+  <div id='myheadervip' class="nav-bar-directive"></div>

@@ -1,0 +1,111 @@
+
+<div class="card">
+    <div class="header">
+        <h2>
+           Product Manage
+        </h2>
+    </div>
+    <div class="body">
+
+
+        <form name="frmCate" id="frmCate" >
+                <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                        <div style="margin-bottom: 5px;">
+                                <center>
+                                    <img style="width:30%" id="output" src="../image/{{product.file}}" class="img-responsive js-animating-object ">
+                                </center>
+                            </div>
+                            <div class="">
+                                    <label for="name">Bìa</label>
+                                    <div class="form-group">
+                                        <div class="form-line">
+                                                <input type="file" class="form-control" name="fileUpload" id="fileUpload" file-input="files">
+                                        </div>
+                                    </div>
+                                </div> 
+                </div>
+                <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
+                        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                                <label for="keyword">Tiêu Đề</label>
+                                <div class="form-group">
+                                    <div class="form-line">
+                                        <input type="text" id="keyword" required="required" ng-model="product.name" class="form-control" placeholder="Nhập Tiêu Đề">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                                <label for="name">Nhóm</label>
+                                <div class="form-group">
+                                        <div class="form-line">
+                                                <select class="form-control" id="sel2" ng-model="product.category" required="required">
+                                                        <option ng-repeat="cate in allCate " value="{{cate.keyword}}">{{cate.name}}</option>
+                                                    </select>
+                                        </div>
+                                    </div>
+                               
+                            </div>
+                            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                                <label for="name">Tác giả</label>
+                                <div class="form-group">
+                                    <div class="form-line">
+                                        <input type="text" id="keyword" required="required" ng-model="product.author" class="form-control" placeholder="Nhập tác giả">
+                                    </div>
+                                </div>
+                            </div>
+                           
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                        <label for="name">Tags</label>
+                        <div class="form-group">
+                            <div class="form-line">
+                                <ui-select multiple tagging tagging-label="" ng-model="product.tags" required="required" theme="bootstrap" sortable="true" ng-disabled="disabled"
+                                    title="Choose a tag">
+                                    <ui-select-match placeholder="Select tags...">{{$item}}</ui-select-match>
+                                    <ui-select-choices repeat="tag in tags | filter:$select.search">
+                                        {{tag}}
+                                    </ui-select-choices>
+                                </ui-select>
+                            </div>
+                        </div>
+                    </div>
+                            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                               
+                                
+                                <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+                                        <label for="name">Slide??</label>
+                                        <div class="form-group">
+                                            <div class="form-line">
+                                                <select class="form-control" id="sel2"  <input type="text" ng/> required="required">
+                                                    <option value="active">Có</option>
+                                                    <option value="hide">Không</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                </div>
+                                
+                                <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
+                                        <div class="{{product.isslide}}">
+                                                <div id="content" name="content" ckeditor='options' ng-model="product.mota"></div>
+                                            </div>
+                                </div>
+                                
+                                
+            
+                            </div>
+            
+            
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <label for="piority">Nội dung</label>
+                <button ng-click="modalUpload()">Upload Image</button>
+                <div id="content" name="content" ckeditor='options' ng-model="product.content" placeholder="Title" ng-required="true"></div>
+            </div>
+            <br>
+            
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <button type="submit" style="float: right;" ng-click="add(product,id)"  class="btn btn-primary m-t-15 waves-effect">Lưu</button>
+            </div>
+            
+            
+        </form>
+    </div>
+</div>

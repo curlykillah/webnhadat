@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myAdmin">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Admin</title>
+    <!-- <link type="text/css" rel="stylesheet" href="css/angular-boostrap.css"> -->
+    <base href="/www/webbanhang/adminmanage/" />
+    <link href="css/fontawesome-free-5.0.13/web-fonts-with-css/css/fontawesome-all.min.css" rel="stylesheet">
+    <!-- <link href="css/style.css" rel="stylesheet">
+    <link href="css/style-responsive.css" rel="stylesheet" /> -->
+
+    <script type="text/javascript" src="angular/angular.js"></script>
+    <script type="text/javascript" src="angular/angular-resource.js"></script>
+    <script type="text/javascript" src="angular/angular-route.js"></script>
+
+    <script type="text/javascript" src="script.js"></script>
+
+    <script type="text/javascript" src="service/route.js"></script>
+    <script type="text/javascript" src="service/service.js"></script>
+    <script type="text/javascript" src="service/user.service.js"></script>
+
+    <script type="text/javascript" src="directive/directive.js"></script>
+    <script type="text/javascript" src="directive/file-input.js"></script>
+
+
+
+    <script type="text/javascript" src="css/js/jquery.min.js"></script>
+    <script type="text/javascript" src="bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
+
+    <script type="text/javascript" src="angular/ckeditor/ckeditor.js"></script>
+    <script type="text/javascript" src="angular/angular-ckeditor/angular-ckeditor.js"></script>
+    <script type="text/javascript" src="angular/angular-ui-select/dist/select.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.18/angular-sanitize.js"></script>
+
+    <link type="text/css" rel="stylesheet" href="angular/angular-ui-select/dist/select.min.css">
+
+    <!-- <link rel="stylesheet" href="css/bootstrap.min.css"> -->
+    <!-- <link rel="stylesheet" href="css/main.css"> -->
+
+
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&subset=latin,cyrillic-ext" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" type="text/css">
+    <!-- Bootstrap Core Css -->
+    <link href="plugins/bootstrap/css/bootstrap.css" rel="stylesheet">
+    <link href="css/bootstrap-responsive.min.css" rel="stylesheet">
+    <!-- Waves Effect Css -->
+    <link href="plugins/node-waves/waves.css" rel="stylesheet" />
+
+    <!-- Animation Css -->
+    <link href="plugins/animate-css/animate.css" rel="stylesheet" />
+
+    <!-- Morris Chart Css-->
+    <link href="plugins/morrisjs/morris.css" rel="stylesheet" />
+
+    <!-- Sweet Alert Css -->
+    <link href="plugins/sweetalert/sweetalert.css" rel="stylesheet" />
+
+    <!-- Custom Css -->
+    <link href="css/style.css" rel="stylesheet">
+
+    <!-- Dropzone Css -->
+    <link href="plugins/dropzone/dropzone.css" rel="stylesheet">
+
+    <!-- AdminBSB Themes. You can choose a theme from css/themes instead of get all themes -->
+    <link href="css/themes/all-themes.css" rel="stylesheet" />
+</head>
+
+<body class="theme-red">
+    <!-- <div>
+        <my-header></my-header>
+        <div id="main-content" style="height: 50px;">
+        </div>
+        <div id="main-content">
+            <div  ng-view></div>
+        </div>
+    </div> -->
+
+    <div class="page-loader-wrapper">
+        <div class="loader">
+            <div class="preloader">
+                <div class="spinner-layer pl-red">
+                    <div class="circle-clipper left">
+                        <div class="circle"></div>
+                    </div>
+                    <div class="circle-clipper right">
+                        <div class="circle"></div>
+                    </div>
+                </div>
+            </div>
+            <p>Please wait...</p>
+        </div>
+    </div>
+
+    <div class="overlay"></div>
+    <div class="search-bar">
+        <div class="search-icon">
+            <i class="material-icons">search</i>
+        </div>
+        <input type="text" placeholder="START TYPING...">
+        <div class="close-search">
+            <i class="material-icons">close</i>
+        </div>
+    </div>
+    <my-header></my-header>
+    <section class="content">
+        <div class="container-fluid">
+            <div ng-view></div>
+        </div>
+    </section>
+
+
+     <!-- Jquery Core Js -->
+     <script type="text/javascript" src="plugins/jquery/jquery.min.js"></script>
+
+     <!-- Bootstrap Core Js -->
+     <script type="text/javascript" src="plugins/bootstrap/js/bootstrap.js"></script>
+ 
+     <!-- Select Plugin Js -->
+     <script type="text/javascript" src="plugins/bootstrap-select/js/bootstrap-select.js"></script>
+ 
+     <!-- Slimscroll Plugin Js -->
+     <script type="text/javascript" src="plugins/jquery-slimscroll/jquery.slimscroll.js"></script>
+ 
+     <!-- Waves Effect Plugin Js -->
+     <script type="text/javascript" src="plugins/node-waves/waves.js"></script>
+ 
+     <!-- Jquery CountTo Plugin Js -->
+     <script type="text/javascript" src="plugins/jquery-countto/jquery.countTo.js"></script>
+ 
+     <!-- Morris Plugin Js -->
+     <script type="text/javascript" src="plugins/raphael/raphael.min.js"></script>
+     <script type="text/javascript" src="plugins/morrisjs/morris.js"></script>
+ 
+     <!-- ChartJs -->
+     <script type="text/javascript" src="plugins/chartjs/Chart.bundle.js"></script>
+ 
+     <!-- Sparkline Chart Plugin Js -->
+     <script type="text/javascript" src="plugins/jquery-sparkline/jquery.sparkline.js"></script>
+ 
+     <!-- Custom Js -->
+     <script type="text/javascript" src="js/admin.js"></script>
+ 
+     <!-- Jquery Validation Plugin Css -->
+     <script type="text/javascript" src="plugins/jquery-validation/jquery.validate.js"></script>
+ 
+     <!-- JQuery Steps Plugin Js -->
+     <script type="text/javascript" src="plugins/jquery-steps/jquery.steps.js"></script>
+ 
+     <!-- Sweet Alert Plugin Js -->
+     <script type="text/javascript" src="plugins/sweetalert/sweetalert.min.js"></script>
+ 
+     <!-- Waves Effect Plugin Js -->
+     <script type="text/javascript" src="plugins/node-waves/waves.js"></script>
+ 
+     <!-- Custom Js -->
+     <script type="text/javascript" src="js/pages/forms/form-wizard.js"></script>
+ 
+     <!-- Dropzone Plugin Js -->
+     <script src="js/dropzone.js"></script>
+     <!-- Bootstrap Tags Input Plugin Js -->
+     <script src="plugins/bootstrap-tagsinput/bootstrap-tagsinput.js"></script>
+     <script src="js/jquery.base64.js"></script>
+     <script src="js/tableExport.js"></script>
+     <script type="text/javascript" src="controller/modal/user.modal.controller.js"></script>
+     <script type="text/javascript" src="controller/modal/poster.modal.controller.js"></script>
+     <script type="text/javascript" src="controller/modal/imageModel.controller.js"></script>
+     <script type="text/javascript" src="controller/modal/user.active.modal.controller.js"></script>
+ 
+     <script type="text/javascript" src="controller/admin/productmanage/add.controller.js"></script>
+     <script type="text/javascript" src="controller/admin/login/login.controller.js"></script>
+     <script type="text/javascript" src="controller/admin/usermanage/usermanage.profile.js"></script>
+     <script type="text/javascript" src="controller/admin/usermanage/user.controller.js"></script>
+     <script type="text/javascript" src="controller/admin/productmanage/product.controller.js"></script>
+     <script type="text/javascript" src="controller/admin/postermanage/poster.controller.js"></script>
+     <script type="text/javascript" src="controller/admin/postermanage/poster.add.controller.js"></script>
+     <script type="text/javascript" src="controller/admin/categorymanage/category.manage.js"></script>
+     <script type="text/javascript" src="controller/admin/categorymanage/category.edit.js"></script>
+     <script type="text/javascript" src="controller/admin/tags/tags.controller.js"></script>
+     <!-- <script type="text/javascript" src="controller/admin/verifymanage/verify.controller.js"></script> -->
+ 
+     <script type="text/javascript" src="controller/nav-bar/nar-bar.controller.js"></script>
+ 
+     <script type="text/javascript" src="controller/myheader.controller.js"></script>
+     <script type="text/javascript" src="controller/profile.controller.js"></script>
+</body>
+
+</html>
